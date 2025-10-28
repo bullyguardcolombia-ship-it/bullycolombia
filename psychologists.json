@@ -1,49 +1,45 @@
 [
-    {
-        "id": 1,
-        "name": "Prof. Angélica Mellizo Vásquez",
-        "specialty": "Psicóloga Clínica - Terapia Cognitivo-Conductual y Terapias de Tercera Generación",
-        "experience": "Especialista en acompañamiento psicológico para ansiedad, depresión, rupturas amorosas, duelo, problemas de autoestima. Ofrece sesiones online y presenciales con enfoque basado en la evidencia.",
-        "photo": <img src="angelica_mellizo_vasquez.webp" alt="Psicóloga Angélica Mellizo Vásquez" class="foto-psicologo">
-
-        "availability": {
-            "Lunes": "8:00 AM - 3:00 PM",
-            "Martes": "8:00 AM - 3:00 PM",
-            "Miércoles": "8:00 AM - 4:00 PM",
-            "Jueves": "8:00 AM - 3:00 PM",
-            "Viernes": "8:00 AM - 3:00 PM"
-        }
-    },
-    {
-        "id": 2,
-        "name": "Mag. Manuel Guerrero Gómez",
-        "specialty": "Psicólogo Clínico y Neuropsicólogo - Terapia Cognitivo Conductual y Terapias Contextuales",
-        "experience": "Maestría en Neuropsicología Clínica. Intervención en Psicología Clínica basada en la evidencia. Especialista en evaluación neuropsicológica del adulto e infantil, diagnóstico de déficit y deterioro cognitivo.",
-        "photo": <img src="manuel_guerrero_gomez.webp" alt="Psicólogo Manuel Guerrero Gómez" class="foto-psicologo">
-
-
-,
-        "availability": {
-            "Lunes": "8:00 AM - 11:00 AM, 1:00 PM - 6:00 PM",
-            "Martes": "No disponible",
-            "Miércoles": "8:00 AM - 11:00 AM",
-            "Jueves": "8:00 AM - 11:00 AM",
-            "Viernes": "8:00 AM - 11:00 AM"
-        }
-    },
-    {
-        "id": 3,
-        "name": "Dra. Marisol Benitez Urrea",
-        "specialty": "Psicóloga Clínica - Terapia Cognitivo Conductual, Terapias Contextuales y PNL",
-        "experience": "Especialista en manejo de estrés, ansiedad, depresión, conflictos en relaciones y crecimiento personal a nivel individual y en pareja. Utiliza técnicas de PNL y actividades simbólicas como meditaciones guiadas y silla vacía.",
-        "photo": <img src="marisol_benitez_urrea.webp" alt="Psicóloga Marisol Benítez Urrea" class="foto-psicologo">
-
-        "availability": {
-            "Lunes": "No disponible",
-            "Martes": "10:00 AM - 5:00 PM",
-            "Miércoles": "No disponible",
-            "Jueves": "8:00 AM - 11:00 AM",
-            "Viernes": "8:00 AM - 11:00 AM"
-        }
+  {
+    "id": 1,
+    "name": "Prof. Angélica Mellizo Vásquez",
+    "specialty": "Psicóloga Clínica - Terapia Cognitivo-Conductual y Terapias de Tercera Generación",
+    "experience": "Especialista en acompañamiento psicológico para ansiedad, depresión, rupturas amorosas, duelo y problemas de autoestima. Ofrece sesiones online y presenciales con enfoque basado en la evidencia.",
+    "photo": "angelica_mellizo_vasquez.webp",
+    "availability": {
+      "Lunes": "8:00 AM - 3:00 PM",
+      "Martes": "8:00 AM - 3:00 PM",
+      "Miércoles": "8:00 AM - 4:00 PM",
+      "Jueves": "8:00 AM - 3:00 PM",
+      "Viernes": "8:00 AM - 3:00 PM"
     }
+  },
+  {
+    "id": 2,
+    "name": "Mag. Manuel Guerrero Gómez",
+    "specialty": "Psicólogo Clínico y Neuropsicólogo - Terapia Cognitivo Conductual y Terapias Contextuales",
+    "experience": "Maestría en Neuropsicología Clínica. Intervención en Psicología Clínica basada en la evidencia. Especialista en evaluación neuropsicológica del adulto e infantil, diagnóstico de déficit y deterioro cognitivo.",
+    "photo": "manuel_guerrero_gomez.webp",
+    "availability": {
+      "Lunes": "8:00 AM - 11:00 AM, 1:00 PM - 6:00 PM",
+      "Martes": "No disponible",
+      "Miércoles": "8:00 AM - 11:00 AM",
+      "Jueves": "8:00 AM - 11:00 AM",
+      "Viernes": "8:00 AM - 11:00 AM"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Dra. Marisol Benítez Urrea",
+    "specialty": "Psicóloga Clínica - Terapia Cognitivo Conductual, Terapias Contextuales y PNL",
+    "experience": "Especialista en manejo de estrés, ansiedad, depresión, conflictos en relaciones y crecimiento personal a nivel individual y en pareja. Utiliza técnicas de PNL y actividades simbólicas como meditaciones guiadas y silla vacía.",
+    "photo": "marisol_benitez_urrea.webp",
+    "availability": {
+      "Lunes": "No disponible",
+      "Martes": "10:00 AM - 5:00 PM",
+      "Miércoles": "No disponible",
+      "Jueves": "8:00 AM - 11:00 AM",
+      "Viernes": "8:00 AM - 11:00 AM"
+    }
+  }
 ]
+
