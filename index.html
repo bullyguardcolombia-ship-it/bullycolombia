@@ -18,23 +18,127 @@
     
     <!-- Bootstrap CSS</head> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+/* ===============================
+   Animaciones y efectos para imágenes
+   =============================== */
+img {
+  transition: transform 0.4s ease, filter 0.4s ease;
+  animation: fadeInZoom 0.8s ease;
+  cursor: pointer;
+}
+
+img:hover {
+  filter: brightness(1.2) saturate(1.3);
+  transform: scale(1.05);
+}
+
+img:active {
+  filter: brightness(1.4) saturate(1.5);
+  transform: scale(0.95);
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===============================
+   Plan cards: tamaño uniforme, animación y cambio de color
+   =============================== */
+.plan-card {
+  flex: 1 1 100%;
+  min-height: 420px;
+  max-height: 450px;
+  background-color: #FAF8F5;
+  border: 2px solid #C9A77B;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+}
+
+.plan-card:hover {
+  background-color: #F3E9DC;
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(139, 94, 60, 0.25);
+}
+
+/* Botones dentro del card */
+.plan-card a.btn-custom-primary {
+  transition: all 0.3s ease;
+}
+
+.plan-card a.btn-custom-primary:hover {
+  background-color: #8B5E3C;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Badge "Más Popular" */
+.plan-card .popular-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #8B5E3C;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ===============================
+   Responsive: columnas según tamaño de pantalla
+   =============================== */
+@media (min-width: 992px) {
+  .plan-card {
+    flex: 1 1 calc(33.33% - 20px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .plan-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .plan-card {
+    flex: 1 1 100%;
+  }
+}
+</style>
     
     <!-- Google Fonts - Optimized for SEO and Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #FAF8F5; border-bottom: 1px solid #E8DDD0;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#home">
-                <img src="logo.jpeg" alt="BullyGuard Logo" height="50" class="me-2">
-                <span style="color: #8B5E3C; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem;">BullyGuard</span>
-            </a>
+<style>
+  /* Efecto de brillo al hacer clic en el logo */
+  .navbar-brand img:active {
+    box-shadow: 0 0 25px 10px rgba(255, 215, 0, 0.8); /* brillo dorado */
+    transform: scale(1.1);
+  }
+
+  /* Desplazamiento suave */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -45,12 +149,66 @@
                     <li class="nav-item"><a class="nav-link" href="#services" style="color: #4E342E;">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="#plans" style="color: #4E342E;">Planes</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials" style="color: #4E342E;">Testimonios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#psychologists" style="color: #4E342E;">Psicólogos</a></li>
+                   <li class="nav-item">
+    <a class="nav-link" href="#psychologists" style="color: #4E342E; scroll-behavior: smooth;">Psicólogos</a>
+  </li>
                     <li class="nav-item"><a class="nav-link" href="#contact" style="color: #4E342E;">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+  </nav>
+
+<!-- AQUÍ COLOCAS LA SECCIÓN DE BIENVENIDA -->
+<section id="hero" class="py-5" style="background-color: #FAF8F5; min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; text-align: center;">
+  <div class="container">
+    <h1 style="color:#4E342E; font-weight:700; margin-bottom:20px; font-size:3rem;">
+      Bienvenido a <span style="color:#8D6E63;">BullyGuard</span>
+    </h1>
+    <p style="color:#5D4037; font-size:1.25rem; max-width:700px; margin:0 auto 40px;">
+      En BullyGuard nos dedicamos a ofrecer acompañamiento psicológico online seguro, humano y accesible. Aquí puedes conectar con psicólogos certificados, recibir orientación profesional, descubrir planes de bienestar adaptados a tus necesidades y leer testimonios de quienes ya han mejorado su bienestar emocional con nosotros.  
+      Tu tranquilidad y crecimiento personal son nuestra prioridad.
+    </p>
+    
+    <!-- Botón flotante animado -->
+    <a href="#contact" class="pulse-button" style="
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: #8D6E63;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+      position: relative;
+      animation: pulse 1.5s infinite;
+    ">
+      Tu bienestar es importante para nosotros
+    </a>
+  </div>
+</section>
+
+<!-- ANIMACIÓN PALPITANTE -->
+<style>
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  .pulse-button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+</style>
+
+<!-- SIGUE EL RESTO DE LA PÁGINA -->
+<section id="why-us">
+  <!-- contenido de por qué nosotros -->
+</section>
+  
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section" style="background-color: #FAF8F5; padding: 80px 0;">
@@ -285,7 +443,6 @@
         </div>
     </section>
 
-    <!-- Plans Section -->
     <section id="plans" class="plans-section py-5" style="background-color: #FFFFFF;">
         <div class="container">
             <h2 class="section-title mb-5" style="color: #8B5E3C; text-align: center;">
@@ -298,7 +455,7 @@
                         <h5 style="color: #8B5E3C; margin-bottom: 15px; font-size: 1.3rem;">💬 Sesión Individual</h5>
                         <p style="color: #4E342E; margin-bottom: 20px;">50 min por videollamada</p>
                         <div style="background-color: #C9A77B; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                            <p style="font-size: 2rem; font-weight: 700; margin: 0;">$80.000</p>
+                            <p style="font-size: 2rem; font-weight: 700; margin: 0;">$50.000</p>
                             <p style="font-size: 0.9rem; margin: 5px 0 0 0;">COP</p>
                         </div>
                         <a href="https://wa.me/573150835253?text=Hola%20BullyGuard%2C%20me%20interesa%20la%20sesión%20individual" class="btn btn-custom-primary w-100" target="_blank">Agendar</a>
@@ -309,7 +466,7 @@
                         <h5 style="color: #8B5E3C; margin-bottom: 15px; font-size: 1.3rem;">🌿 Plan Semanal</h5>
                         <p style="color: #4E342E; margin-bottom: 20px;">1 sesión + acompañamiento WhatsApp</p>
                         <div style="background-color: #C9A77B; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                            <p style="font-size: 2rem; font-weight: 700; margin: 0;">$200.000</p>
+                            <p style="font-size: 2rem; font-weight: 700; margin: 0;">$90.000</p>
                             <p style="font-size: 0.9rem; margin: 5px 0 0 0;">COP/mes</p>
                         </div>
                         <a href="https://wa.me/573150835253?text=Hola%20BullyGuard%2C%20me%20interesa%20el%20plan%20semanal" class="btn btn-custom-primary w-100" target="_blank">Agendar</a>
@@ -323,9 +480,46 @@
                         <h5 style="color: #8B5E3C; margin-bottom: 15px; font-size: 1.3rem;">💪 Plan Mensual Plus</h5>
                         <p style="color: #4E342E; margin-bottom: 20px;">4 sesiones + test emocional + seguimiento personalizado</p>
                         <div style="background-color: #8B5E3C; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                            <p style="font-size: 2rem; font-weight: 700; margin: 0;">$470.000</p>
+                            <p style="font-size: 2rem; font-weight: 700; margin: 0;">$190.000</p>
                             <p style="font-size: 0.9rem; margin: 5px 0 0 0;">COP/mes</p>
                         </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="plan-card" style="background-color: #FAF8F5; border: 2px solid #C9A77B; padding: 40px 30px; border-radius: 12px; text-align: center;">
+                        <h5 style="color: #8B5E3C; margin-bottom: 15px; font-size: 1.3rem;">💬 Sesión Individual</h5>
+                        <p style="color: #4E342E; margin-bottom: 20px;">50 min por videollamada</p>
+                        <div style="background-color: #C9A77B; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                            <p style="font-size: 2rem; font-weight: 700; margin: 0;">$50.000</p>
+                            <p style="font-size: 0.9rem; margin: 5px 0 0 0;">COP</p>
+                        </div>
+                        <a href="https://wa.me/573150835253?text=Hola%20BullyGuard%2C%20me%20interesa%20la%20sesión%20individual" class="btn btn-custom-primary w-100" target="_blank">Agendar</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="plan-card" style="background-color: #FAF8F5; border: 2px solid #C9A77B; padding: 40px 30px; border-radius: 12px; text-align: center;">
+                        <h5 style="color: #8B5E3C; margin-bottom: 15px; font-size: 1.3rem;">🌿 Plan Semanal</h5>
+                        <p style="color: #4E342E; margin-bottom: 20px;">1 sesión + acompañamiento WhatsApp</p>
+                        <div style="background-color: #C9A77B; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                            <p style="font-size: 2rem; font-weight: 700; margin: 0;">$90.000</p>
+                            <p style="font-size: 0.9rem; margin: 5px 0 0 0;">COP/mes</p>
+                        </div>
+                        <a href="https://wa.me/573150835253?text=Hola%20BullyGuard%2C%20me%20interesa%20el%20plan%20semanal" class="btn btn-custom-primary w-100" target="_blank">Agendar</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="plan-card" style="background-color: #FAF8F5; border: 3px solid #8B5E3C; padding: 40px 30px; border-radius: 12px; text-align: center; position: relative;">
+                        <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background-color: #8B5E3C; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                            ⭐ MÁS POPULAR
+                        </div>
+                        <h5 style="color: #8B5E3C; margin-bottom: 15px; font-size: 1.3rem;">💪 Plan Mensual Plus</h5>
+                        <p style="color: #4E342E; margin-bottom: 20px;">4 sesiones + test emocional + seguimiento personalizado</p>
+                        <div style="background-color: #8B5E3C; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                            <p style="font-size: 2rem; font-weight: 700; margin: 0;">$190.000</p>
+                            <p style="font-size: 0.9rem; margin: 5px 0 0 0;">COP/mes</p>
+                        </div>
+                    
+
                         <a href="https://wa.me/573150835253?text=Hola%20BullyGuard%2C%20me%20interesa%20el%20plan%20mensual%20plus" class="btn btn-custom-primary w-100" target="_blank">Agendar</a>
                     </div>
                 </div>
@@ -409,71 +603,247 @@
         </div>
     </section>
 
-    <!-- Psychologists Section -->
-    <section id="psychologists" class="psychologists-section py-5" style="background-color: #FFFFFF;">
-        <div class="container">
-            <h2 class="section-title mb-5" style="color: #8B5E3C; text-align: center;">
-                Nuestros Psicologos Verificados
-            </h2>
-            <p class="text-center mb-5" style="color: #4E342E; font-size: 1.05rem;">
-                Conoce a nuestro equipo de profesionales certificados y especializados en diferentes areas de la salud mental.
-            </p>
+  <!-- Psychologists Section -->
+<section id="psychologists" class="psychologists-section py-5" style="background-color: #FFFFFF;">
+  <div class="container">
+    <h2 class="section-title mb-5" style="color: #8B5E3C; text-align: center;">
+      Nuestros Psicólogos Verificados
+    </h2>
+    <p class="text-center mb-5" style="color: #4E342E; font-size: 1.05rem;">
+      Conoce a nuestro equipo de profesionales certificados y especializados en diferentes áreas de la salud mental.
+    </p>
             <div id="psychologists-container" class="row g-4">
-                   <!-- Psicóloga Angélica Mellizo Vásquez -->
-      <div class="col-md-4 col-sm-6 text-center">
-        <div class="card border-0 bg-transparent">
-          <img src="/stunning-octo-barnacle/angelica_mellizo_vasquez.webp"
-               alt="Psicóloga Angélica Mellizo Vásquez"
-               class="img-fluid rounded-circle shadow"
-               style="width: 200px; height: 200px; object-fit: cover; margin: 0 auto;">
-          <div class="card-body">
-            <h4 class="card-title mt-3" style="color: #4E342E;">Angélica Mellizo Vásquez</h4>
-            <p class="card-text" style="color: #6D4C41; font-size: 0.95rem;">
-              Psicóloga con amplia experiencia en intervención emocional y acompañamiento psicológico en línea.
-              Enfocada en fortalecer el bienestar emocional y la resiliencia de niños, adolescentes y adultos.
-            </p>
+            <!-- 🌿 Sección Psicólogos -->
+<section id="psychologists" class="py-5" style="background-color: #FFFFFF;">
+  <div class="container text-center">
+    <h2 class="mb-5" style="color: #8B5E3C;">Nuestros Psicólogos Verificados</h2>
+    <p class="mb-5" style="color: #4E342E; font-size: 1.05rem;">
+      Conoce a nuestro equipo de profesionales certificados y especializados en diferentes áreas de la salud mental.
+    </p>
+
+    <div class="row g-4">
+
+      <!-- 🔸 Psicóloga Angélica Mellizo Vásquez -->
+      <div class="col-md-4 col-sm-6">
+        <div class="psychologist-card">
+          <div class="image-container">
+            <img src="/stunning-octo-barnacle/angelica_mellizo_vasquez.webp" alt="Psicóloga Angélica Mellizo Vásquez">
+            <div class="overlay">
+              <button onclick="showInfo('angelica')" class="info-btn">Ver información</button>
+            </div>
           </div>
+          <h4>Angélica Mellizo Vásquez</h4>
         </div>
       </div>
 
-      <!-- Psicóloga Marisol Benítez Urrea -->
-      <div class="col-md-4 col-sm-6 text-center">
-        <div class="card border-0 bg-transparent">
-          <img src="/stunning-octo-barnacle/marisol_benitez_urrea.webp"
-               alt="Psicóloga Marisol Benítez Urrea"
-               class="img-fluid rounded-circle shadow"
-               style="width: 200px; height: 200px; object-fit: cover; margin: 0 auto;">
-          <div class="card-body">
-            <h4 class="card-title mt-3" style="color: #4E342E;">Marisol Benítez Urrea</h4>
-            <p class="card-text" style="color: #6D4C41; font-size: 0.95rem;">
-              Psicóloga clínica y terapeuta cognitivo-conductual. Especialista en manejo del estrés,
-              ansiedad y salud mental preventiva. Comprometida con el bienestar integral de cada persona.
-            </p>
+      <!-- 🔸 Psicóloga Marisol Benítez Urrea -->
+      <div class="col-md-4 col-sm-6">
+        <div class="psychologist-card">
+          <div class="image-container">
+            <img src="/stunning-octo-barnacle/marisol_benitez_urrea.webp" alt="Psicóloga Marisol Benítez Urrea">
+            <div class="overlay">
+              <button onclick="showInfo('marisol')" class="info-btn">Ver información</button>
+            </div>
           </div>
+          <h4>Marisol Benítez Urrea</h4>
         </div>
       </div>
 
-      <!-- Psicólogo Manuel Guerrero Gómez -->
-      <div class="col-md-4 col-sm-6 text-center">
-        <div class="card border-0 bg-transparent">
-          <img src="/stunning-octo-barnacle/manuel_guerrero_gomez.webp"
-               alt="Psicólogo Manuel Guerrero Gómez"
-               class="img-fluid rounded-circle shadow"
-               style="width: 200px; height: 200px; object-fit: cover; margin: 0 auto;">
-          <div class="card-body">
-            <h4 class="card-title mt-3" style="color: #4E342E;">Manuel Guerrero Gómez</h4>
-            <p class="card-text" style="color: #6D4C41; font-size: 0.95rem;">
-              Psicólogo educativo con especialización en orientación escolar y convivencia.
-              Promueve ambientes sanos de aprendizaje y estrategias para la prevención del bullying.
-            </p>
+      <!-- 🔸 Psicólogo Manuel Guerrero Gómez -->
+      <div class="col-md-4 col-sm-6">
+        <div class="psychologist-card">
+          <div class="image-container">
+            <img src="/stunning-octo-barnacle/manuel_guerrero_gomez.webp" alt="Psicólogo Manuel Guerrero Gómez">
+            <div class="overlay">
+              <button onclick="showInfo('manuel')" class="info-btn">Ver información</button>
+            </div>
           </div>
+          <h4>Manuel Guerrero Gómez</h4>
         </div>
       </div>
 
     </div>
   </div>
 </section>
-              
+
+<!-- 🌿 Modal (cuadro emergente con estilo BullyGuard) -->
+<div id="infoModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeInfo()">&times;</span>
+    <h3 id="modalName"></h3>
+    <p id="modalDetails"></p>
+  </div>
+</div>
+
+<!-- 🌿 Estilos -->
+<style>
+  /* Tarjetas */
+  .psychologist-card {
+    text-align: center;
+  }
+
+  .psychologist-card h4 {
+    margin-top: 15px;
+    color: #4E342E;
+    font-weight: 600;
+  }
+
+  /* Imagen circular con overlay */
+  .image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(78, 52, 46, 0.25);
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .image-container:hover img {
+    transform: scale(1.1);
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(78, 52, 46, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 50%;
+  }
+
+  .image-container:hover .overlay {
+    opacity: 1;
+  }
+
+  .info-btn {
+    background-color: #8B5E3C;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s;
+  }
+
+  .info-btn:hover {
+    background-color: #4E342E;
+    transform: scale(1.05);
+  }
+
+  /* 🌿 Modal general */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background-color: rgba(78, 52, 46, 0.6);
+    animation: fadeIn 0.4s ease;
+  }
+
+  /* Cuadro modal */
+  .modal-content {
+    background-color: #FAF8F5;
+    border: 2px solid #8B5E3C;
+    margin: 8% auto;
+    padding: 35px 25px;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 520px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    animation: popUp 0.4s ease;
+  }
+
+  /* Texto dentro del modal */
+  #modalName {
+    color: #4E342E;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  #modalDetails {
+    color: #6D4C41;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Botón cerrar */
+  .close-btn {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #8B5E3C;
+    transition: color 0.3s;
+  }
+
+  .close-btn:hover {
+    color: #4E342E;
+  }
+
+  /* Animaciones suaves */
+  @keyframes fadeIn {
+    from { opacity: 0; } 
+    to { opacity: 1; }
+  }
+
+  @keyframes popUp {
+    from { transform: scale(0.9); opacity: 0; } 
+    to { transform: scale(1); opacity: 1; }
+  }
+</style>
+
+<!-- 🌿 Script -->
+<script>
+  function showInfo(id) {
+    const modal = document.getElementById("infoModal");
+    const name = document.getElementById("modalName");
+    const details = document.getElementById("modalDetails");
+
+    const info = {
+      angelica: {
+        name: "Angélica Mellizo Vásquez",
+        details: "Psicóloga con más de 8 años de experiencia en intervención emocional y acompañamiento psicológico en línea. Especialista en bienestar emocional y resiliencia para niños, adolescentes y adultos."
+      },
+      marisol: {
+        name: "Marisol Benítez Urrea",
+        details: "Psicóloga clínica y terapeuta cognitivo-conductual con 10 años de experiencia. Especialista en manejo del estrés, ansiedad y salud mental preventiva."
+      },
+      manuel: {
+        name: "Manuel Guerrero Gómez",
+        details: "Psicólogo educativo con 7 años de experiencia en orientación escolar y convivencia. Promueve estrategias para la prevención del bullying y entornos saludables de aprendizaje."
+      }
+    };
+
+    name.textContent = info[id].name;
+    details.textContent = info[id].details;
+    modal.style.display = "block";
+  }
+
+  function closeInfo() {
+    document.getElementById("infoModal").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("infoModal");
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+  
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section py-5" style="background-color: #FAF8F5;">
@@ -592,6 +962,52 @@
             </div>
         </div>
     </div>
+ <!-- 🚨 Botón de Emergencia Prevenir -->
+  <a href="https://wa.me/573001112233" target="_blank" class="emergency-btn" title="Habla con BullyGuard">
+    🛡️ Prevenir
+  </a>
+
+  <style>
+    .emergency-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #C62828;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      padding: 15px 25px;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      z-index: 9999;
+      animation: pulse 1.5s infinite;
+    }
+
+    .emergency-btn:hover {
+      background-color: #8B0000;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0.6); }
+      70% { box-shadow: 0 0 0 15px rgba(198, 40, 40, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0); }
+    }
+
+    @media (max-width: 768px) {
+      .emergency-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>                
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
